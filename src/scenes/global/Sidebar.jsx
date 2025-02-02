@@ -48,14 +48,18 @@ const MainSidebar = () => {
         "& .css-dip3t8": {
           backgroundColor: "transparent !important",  // Override background
         },
+        "& .css-dip3t8:hover": {
+          backgroundColor: "transparent !important"
+        },
         "& .pro-icon-wrapper": {
           backgroundColor: "transparent !important",
         },
         "& .pro-inner-item": {    
           padding: "5px 35px 5px 20px !important",
         },
-        "& .pro-inner-item:hover": {
+        "&.pro-inner-item:hover": {
           color: "#868dfb !important",
+          backgroundColor: "transparent !important", 
         },
         "& .pro-menu-item.active": {
           color: "#6870fa !important",
@@ -80,8 +84,8 @@ const MainSidebar = () => {
                 alignItems="center"
                 ml="15px"
               >
-                <Typography variant="h3" color={colors.grey[100]}>
-                  ADMINIS
+                <Typography variant="h4" color={colors.grey[100]}>
+                  ADMIN
                 </Typography>
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                   <MenuOutlinedIcon />
@@ -103,15 +107,15 @@ const MainSidebar = () => {
               </Box>
               <Box textAlign="center">
                 <Typography
-                  variant="h2"
+                  variant="h3"
                   color={colors.grey[100]}
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
                 >
-                  Ed Roh
+                  John Doe
                 </Typography>
                 <Typography variant="h5" color={colors.greenAccent[500]}>
-                  VP Fancy Admin
+                  Admin
                 </Typography>
               </Box>
             </Box>
