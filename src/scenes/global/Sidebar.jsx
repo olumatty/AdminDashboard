@@ -26,9 +26,10 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
       style={{ color: colors.grey[100] }}
       onClick={() => setSelected(title)}
       icon={icon}
+      component={<Link to={to} />}
     >
       <Typography>{title}</Typography>
-      <Link to={to} />
+     
     </MenuItem>
   );
 };
@@ -43,23 +44,25 @@ const MainSidebar = () => {
     <Box
       sx={{
         "& .pro-sidebar-inner": {
-          background:`${colors.primary[400]} !important`,
+          background: `${colors.primary[400]} !important`,
         },
         "& .css-dip3t8": {
-          backgroundColor: "transparent !important",  // Override background
+          backgroundColor: "transparent !important", // Override background
         },
-        "& .css-dip3t8:hover": {
-          backgroundColor: "transparent !important"
+        "& .ps-menu-button": {
+          backgroundColor: "transparent !important",
+        },
+        "& .ps-menu-button:hover": {
+          color: "#868dfb !important",
         },
         "& .pro-icon-wrapper": {
           backgroundColor: "transparent !important",
         },
-        "& .pro-inner-item": {    
+        "& .pro-inner-item": {
           padding: "5px 35px 5px 20px !important",
         },
         "&.pro-inner-item:hover": {
           color: "#868dfb !important",
-          backgroundColor: "transparent !important", 
         },
         "& .pro-menu-item.active": {
           color: "#6870fa !important",
