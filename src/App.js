@@ -4,7 +4,7 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import TopBar from "./scenes/global/TopBar";
 import MainSidebar from "./scenes/global/Sidebar";
 import Dashboard from "./scenes/dashboard";
-//import Team from "./scenes/team";
+import Team from "./scenes/team/Index.jsx"
 //import Invoices from "./scenes/invoices";
 //import Contacts from "./scenes/conntacts";
 //import Bar from "./scenes/bar";
@@ -30,8 +30,9 @@ const App = () => {
               <TopBar />
               <Routes>
                 <Route path = "/" element={<Dashboard/>}/>
-                {/* 
+                 
                 <Route path="/team" element={<Team />} /> 
+                {/*
                 <Route path="/invoices" element={<Invoices />} />
                 <Route path="/contacts" element={<Contacts />} />
                 <Route path="/bar" element={<Bar />} />
