@@ -5,8 +5,8 @@ import TopBar from "./scenes/global/TopBar";
 import MainSidebar from "./scenes/global/Sidebar";
 import Dashboard from "./scenes/dashboard";
 import Team from "./scenes/team/Index.jsx"
-//import Invoices from "./scenes/invoices";
-//import Contacts from "./scenes/conntacts";
+//import Invoices from "./scenes/contact/index.jsx";
+import Contacts from "./scenes/contact/index.jsx";
 //import Bar from "./scenes/bar";
 //import Form from "./scenes/form";
 //import Line from "./scenes/line";
@@ -29,12 +29,12 @@ const App = () => {
             <main className="content">
               <TopBar />
               <Routes>
-                <Route path = "/" element={<Dashboard/>}/>
-                 
+                <Route path = "/" element={<Dashboard/>}/>  
                 <Route path="/team" element={<Team />} /> 
-                {/*
+                <Route path="/contacts" element={<Contacts />}/>
+                
+                 {/*
                 <Route path="/invoices" element={<Invoices />} />
-                <Route path="/contacts" element={<Contacts />} />
                 <Route path="/bar" element={<Bar />} />
                 <Route path="/form" element={<Form />} />
                 <Route path="/line" element={<Line />} />
