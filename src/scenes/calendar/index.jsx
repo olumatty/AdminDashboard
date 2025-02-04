@@ -38,7 +38,7 @@ const Calendar = () => {
     }
   };
 
-  const hanleEventClick = (selected) => {
+  const handleEventClick = (selected) => {
     if (
       window.confirm(
         `Are you sure you want to delete the event '${selected.event.title}'`
@@ -99,8 +99,21 @@ const Calendar = () => {
             headerToolbar={{
               left: "prev, next today",
               center: "title",
-              right: "dayGridMonth, timeGridWeek, timeGridDay, listMonth"
+              right: "dayGridMonth,timeGridWeek,timeGridDay,listMonth"
             }}
+            initialView="dayGridMonth"
+            editable={true}
+            selectable={true}
+            selectMirror={true}
+            dayMaxEvents={true}
+            select={handleDateClick}
+            eventClick={handleEventClick}
+            eventsSet={(events)=> setCurrentEvents(events)}
+            initialEvents={[
+                {id:"1234", title:"All-day event", date:"2025-02-02"},
+                {id:"1342", title:"Time event", date:"2025-02-12"},
+
+            ]}
           />
         </Box>
       </Box>
