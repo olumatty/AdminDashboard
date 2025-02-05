@@ -29,7 +29,6 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
       component={<Link to={to} />}
     >
       <Typography>{title}</Typography>
-     
     </MenuItem>
   );
 };
@@ -43,11 +42,17 @@ const MainSidebar = () => {
   return (
     <Box
       sx={{
+        height: "100vh", // Ensures full viewport height
+        display: "flex", // Aligns the sidebar properly in flex layout
+        overflow: "hidden !important", // Prevent scrolling
+        "& .pro-sidebar": {
+          height: "100vh !important", // Ensures sidebar takes full height
+        },
         "& .pro-sidebar-inner": {
           background: `${colors.primary[400]} !important`,
         },
         "& .css-dip3t8": {
-          backgroundColor: "transparent !important", // Override background
+          backgroundColor: "transparent !important",
         },
         "& .ps-menu-button": {
           backgroundColor: "transparent !important",
@@ -61,7 +66,7 @@ const MainSidebar = () => {
         "& .pro-inner-item": {
           padding: "5px 35px 5px 20px !important",
         },
-        "&.pro-inner-item:hover": {
+        "& .pro-inner-item:hover": {
           color: "#868dfb !important",
         },
         "& .pro-menu-item.active": {
