@@ -1,4 +1,11 @@
-import { Box, Typography, Button, IconButons, useTheme } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Button,
+  IconButons,
+  useTheme,
+  IconButton,
+} from "@mui/material";
 import Header from "../../components/Header";
 import { tokens } from "../../theme";
 import { mockTransactions } from "../../data/MockData";
@@ -110,7 +117,7 @@ const Dashboard = () => {
           alignItems="center"
           justifyContent="center"
         >
-           <StatBox
+          <StatBox
             title="1,325,134"
             subtitle="Traffic Received"
             progress="0.80"
@@ -123,7 +130,58 @@ const Dashboard = () => {
           />
         </Box>
 
-        {}
+        {/* Row 2 */}
+        <Box
+          gridColumn="span 8"
+          gridRow="span 2"
+          backgroundColor={colors.primary[400]}
+        >
+          <Box
+            mt="25px"
+            p="0 30px"
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <Box>
+              <Typography
+                variant="h5"
+                fontWeight="600"
+                color={colors.grey[100]}
+              >
+                Revenue Generated
+              </Typography>
+              <Typography
+                variant="h3"
+                fontWeight="500"
+                color={colors.greenAccent[500]}
+              >
+                $59,342,32
+              </Typography>
+            </Box>
+
+            <Box>
+              <IconButton>
+                <DownloadOutlinedIcon
+                  sx={{ fontSize: "26px", color: colors.greenAccent[500] }}
+                />
+              </IconButton>
+            </Box>
+          </Box>
+          <Box height="250px" ml="-20px">
+            <LineChart isDashboard={true} />
+          </Box>
+
+          {/*Transaction */}
+          <Box gridColumn="span 4" gridRow="span 2" backgroundColor={colors.primary[400]} overflow="auto">
+            <Box display="flex" justifyContent="space-between" alignItems="center" borderBottom={`4px solid ${colors.primary[500]}`} color={colors.primary[100]} p="15px">
+              <Typography color={colors.grey[100]} variant="h5" fontWeight="60">
+
+              </Typography>
+            </Box>
+          </Box>
+
+        </Box>
       </Box>
     </Box>
   );
