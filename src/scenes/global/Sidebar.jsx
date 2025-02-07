@@ -42,23 +42,28 @@ const MainSidebar = () => {
   return (
     <Box
       sx={{
-        height: "100vh", // Ensures full viewport height
-        display: "flex", // Aligns the sidebar properly in flex layout
-        overflow: "hidden !important", // Prevent scrolling
+        display: "flex",
+        height: "100vh", // Ensures the sidebar takes full viewport height
         "& .pro-sidebar": {
-          height: "100vh !important", // Ensures sidebar takes full height
+          height: "100vh", // Full viewport height
+          position: "fixed", // Keep the sidebar fixed
+          left: 0, // Ensure it sticks to the left side
+          top: 0, // Align with the top of the viewport
+          bottom: 0, // Align with the bottom of the viewport
+          transition: "width 0.3s ease-in-out",
+          overflow: "hidden", // Prevents sidebar-specific scrolling
         },
         "& .pro-sidebar-inner": {
           background: `${colors.primary[400]} !important`,
+          height: "100%", // Ensures full height within the sidebar
         },
-        "& .css-dip3t8": {
-          backgroundColor: "transparent !important",
+        "& .pro-menu": {
+          height: "100%", // Ensures the menu takes full height
+          display: "flex",
+          flexDirection: "column",
         },
-        "& .ps-menu-button": {
-          backgroundColor: "transparent !important",
-        },
-        "& .ps-menu-button:hover": {
-          color: "#868dfb !important",
+        "& .pro-menu-item": {
+          flexShrink: 0, // Prevents items from shrinking when collapsed
         },
         "& .pro-icon-wrapper": {
           backgroundColor: "transparent !important",
@@ -72,10 +77,15 @@ const MainSidebar = () => {
         "& .pro-menu-item.active": {
           color: "#6870fa !important",
         },
+        "& .css-dip3t8, & .ps-menu-button": {
+          backgroundColor: "transparent !important",
+        },
       }}
     >
+    
+    
       <Sidebar collapsed={isCollapsed}>
-        <Menu iconShape="square">
+      <Menu iconShape="square">
           {/* LOGO AND MENU ICON */}
           <MenuItem
             onClick={() => setIsCollapsed(!isCollapsed)}
@@ -115,12 +125,12 @@ const MainSidebar = () => {
               </Box>
               <Box textAlign="center">
                 <Typography
-                  variant="h3"
+                  variant="h2"
                   color={colors.grey[100]}
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
                 >
-                  John Doe
+                  John Smith
                 </Typography>
                 <Typography variant="h5" color={colors.greenAccent[500]}>
                   Admin
