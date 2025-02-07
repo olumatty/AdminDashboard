@@ -42,28 +42,8 @@ const MainSidebar = () => {
   return (
     <Box
       sx={{
-        display: "flex",
-        height: "100vh", // Ensures the sidebar takes full viewport height
-        "& .pro-sidebar": {
-          height: "100vh", // Full viewport height
-          position: "fixed", // Keep the sidebar fixed
-          left: 0, // Ensure it sticks to the left side
-          top: 0, // Align with the top of the viewport
-          bottom: 0, // Align with the bottom of the viewport
-          transition: "width 0.3s ease-in-out",
-          overflow: "hidden", // Prevents sidebar-specific scrolling
-        },
         "& .pro-sidebar-inner": {
           background: `${colors.primary[400]} !important`,
-          height: "100%", // Ensures full height within the sidebar
-        },
-        "& .pro-menu": {
-          height: "100%", // Ensures the menu takes full height
-          display: "flex",
-          flexDirection: "column",
-        },
-        "& .pro-menu-item": {
-          flexShrink: 0, // Prevents items from shrinking when collapsed
         },
         "& .pro-icon-wrapper": {
           backgroundColor: "transparent !important",
@@ -82,8 +62,7 @@ const MainSidebar = () => {
         },
       }}
     >
-    
-    
+  
       <Sidebar collapsed={isCollapsed}>
       <Menu iconShape="square">
           {/* LOGO AND MENU ICON */}
